@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E_COMMERCE WEB</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" referrerpolicy="no-referrer" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 <body>
 
-
+    <!-- class="logo" -->
    
     <section id="header">
-        <a href="#"><img src="img/logo.png" class="logo" alt=""></a>
+        <a id="auth-button" href="FIREBASE AUTHENTICATION/login-signup-form.html"><button class="logo nav-btn">Create Account</button></a>
         <div>
             <ul id="navbar">
                 <li><a class="active" href="index.html">Home</a></li>
@@ -27,10 +26,8 @@
             </ul>
         </div>
         <div id="mobile">
-        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-        <i id="bar" class="fas fa-outdent"></i>
-
-
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
         </div>
     </section>
 
@@ -485,6 +482,46 @@
                 </div>
         </footer>
 
+
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+            import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
+        
+            const firebaseConfig = {
+                apiKey: "AIzaSyCGIGDAGnpkPMyWmd4NaTTlvosqGrnSVPg",
+                authDomain: "e-commerce-web-75390.firebaseapp.com",
+                projectId: "e-commerce-web-75390",
+                storageBucket: "e-commerce-web-75390.appspot.com",
+                messagingSenderId: "949515037608",
+                appId: "1:949515037608:web:298c2fbdb44905a42b0b9d",
+                measurementId: "G-7LMPV0W7VR"
+            };
+        
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+        
+            onAuthStateChanged(auth, (user) => {
+                const authButton = document.getElementById('auth-button');
+                if (user) {
+                    // User is signed in, show Logout button
+                    authButton.innerHTML = '<button id="logout-button" class="logo nav-btn">Logout</button>';
+                    document.getElementById('logout-button').addEventListener('click', () => {
+                        signOut(auth).then(() => {
+                            alert('User logged out');
+                            window.location.href = "index.html";
+                        }).catch((error) => {
+                            console.error('Error logging out:', error);
+                            alert('Error logging out: ' + error.message);
+                        });
+                    });
+                } else {
+                    // No user is signed in, show Create Account button
+                    authButton.innerHTML = '<a href="FIREBASE AUTHENTICATION/login-signup-form.html"><button class="logo nav-btn">Create Account</button></a>';
+                }
+            });
+        </script>
+
+        
     <script src="app.js"></script>
 </body>
 </html>
