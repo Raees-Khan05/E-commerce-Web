@@ -247,6 +247,28 @@ body{
 
 #Product1{
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+    /* align-items: center; */
+}
+
+
+#Product11{
+    text-align: center;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Product12{
+    text-align: center;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
 }
 
 #Product1 .pro-container{
@@ -255,6 +277,56 @@ body{
     padding-left: 20px;
     flex-wrap: wrap;
 }
+
+#Product12 .pro-container{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 20px;
+    flex-wrap: wrap;
+}
+
+
+#Product11 .pro-container{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 20px;
+    flex-wrap: wrap;
+}
+
+
+
+#Product11 .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0 , 0 , 0 , 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+    margin: 10px 5px;
+
+
+}
+
+#Product12 .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0 , 0 , 0 , 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+    margin: 10px 5px;
+
+
+}
+
 
 #Product1 .pro{
     width: 23%;
@@ -277,7 +349,32 @@ body{
 
 }
 
+#Product11 .pro:hover{
+    box-shadow: 20px 20px 30px rgba(0 , 0 , 0 , 0.06);
+
+}
+
+#Product12 .pro:hover{
+    box-shadow: 20px 20px 30px rgba(0 , 0 , 0 , 0.06);
+
+}
+
 #Product1 .pro img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+#Product12 .pro img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+#Product11 .pro img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+#Product12 .pro img{
     width: 100%;
     border-radius: 20px;
 }
@@ -285,10 +382,29 @@ body{
 #Product1 .pro .des{
     text-align: start;
     pad: 10px 0;
+}
 
+#Product12 .pro .des{
+    text-align: start;
+    pad: 10px 0;
+}
+
+#Product11 .pro .des{
+    text-align: start;
+    pad: 10px 0;
 }
 
 #Product1 .pro .des span{
+    color: #606063;
+    font-size: 12px;
+}
+
+#Product12 .pro .des span{
+    color: #606063;
+    font-size: 12px;
+}
+
+#Product11 .pro .des span{
     color: #606063;
     font-size: 12px;
 }
@@ -299,7 +415,29 @@ body{
     font-size: 14px;
 }
 
+#Product12 .pro .des h5{
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+#Product11 .pro .des h5{
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
 #Product1 .pro .des i{
+    font-size: 12px;
+    color: rgb(255, 238, 20);
+}
+
+#Product12 .pro .des i{
+    font-size: 12px;
+    color: rgb(255, 238, 20);
+}
+
+#Product11 .pro .des i{
     font-size: 12px;
     color: rgb(255, 238, 20);
 }
@@ -311,8 +449,49 @@ body{
     color: #088178;
 }
 
+#Product12 .pro .des h4{
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+
+#Product11 .pro .des h4{
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
 
 #Product1 .pro .cartt{
+    width: 37px;
+    height: 37px;
+    line-height: 37px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    font-weight: 500;
+    color: #088178;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+}
+
+#Product12 .pro .cartt{
+    width: 37px;
+    height: 37px;
+    line-height: 37px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    font-weight: 500;
+    color: #088178;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+}
+
+#Product11 .pro .cartt{
     width: 37px;
     height: 37px;
     line-height: 37px;
@@ -951,8 +1130,8 @@ footer .copyright{
 /* cart page css */
 
 #cart{
-    /* overflow-x: auto; */
-    overflow: auto;
+    overflow-x: auto;
+    /* overflow: auto; */
 }
 
 #cart table{

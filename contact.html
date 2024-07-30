@@ -13,14 +13,21 @@
    
     <section id="header">
         <a id="auth-button" href="FIREBASE AUTHENTICATION/login-signup-form.html"><button class="logo nav-btn">Create Account</button></a>
-4
+
             <ul id="navbar">
                 <li><a  href="index.html">Home</a></li>
                 <li><a  href="shop.html">Shop</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a class="active" href="contact.html">Contact</a></li>
-                <li><a id="lg-bag" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li>
+                    <div id="mainer">
+                        
+                        <a id="lg-bag" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a> 
+                        <span id="newest_span">0</span>
+                    </li>
+
+                    </div>
                 <a href="#" id="close"> <i class="fa-solid fa-xmark"></i></a>
             </ul>
         </div>
@@ -179,6 +186,9 @@
                 </div>
         </footer>
 
-    <script src="app.js"></script>
+    <script src="app.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+    <script type="module" src="path/to/firebase-config.js"></script>
+
 </body>
 </html>

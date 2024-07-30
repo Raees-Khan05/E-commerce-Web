@@ -10,12 +10,14 @@ signInButton.addEventListener('click', () => {
     container.classList.remove("right-panel-active");
 });
 
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
-
 import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
-
-const firebaseConfig = {
+  import { getFirestore ,
+    addDoc, collection,
+   } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+ 
+  const firebaseConfig = {
     apiKey: "AIzaSyCGIGDAGnpkPMyWmd4NaTTlvosqGrnSVPg",
     authDomain: "e-commerce-web-75390.firebaseapp.com",
     projectId: "e-commerce-web-75390",
@@ -23,11 +25,12 @@ const firebaseConfig = {
     messagingSenderId: "949515037608",
     appId: "1:949515037608:web:298c2fbdb44905a42b0b9d",
     measurementId: "G-7LMPV0W7VR"
-};
+  };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app)
+   const auth = getAuth(app);
+  console.log(db);
 
 let signupEmail = document.getElementById("signup_email");
 let signupPassword = document.getElementById("signup_password");
